@@ -76,10 +76,10 @@
                 "url": "https://www.linkedin.com/in",
                 "user": "léo-teissier"
             },
-            "tryhackme": {
-                "title": "Try Hack Me profile",
-                "url": "https://tryhackme.com/p",
-                "user": "leo.teissier"
+            "root_me": {
+                "title": "Root Me profile",
+                "url": "https://www.root-me.org",
+                "user": "acsioses"
             }
         }
     },
