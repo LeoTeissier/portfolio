@@ -65,23 +65,23 @@ onBeforeUnmount(() => {
           </a>
         </p>
         <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': isMobile }">
-                    // you can also see it on my HackTheBox page
+                    // you can also see it on my Root-Me page
                 </span>
         <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
-                    // find my profile on HackTheBox:
+                    // find my profile on Root-Me:
                 </span>
         <p class="code text-[#E5E9F0]">
                     <span class="text-[#4D5BCE]">
                         const
                     </span>
           <span class="text-[#43D9AD]">
-                        TryHackMeLink
+                        RootMeLink
                     </span>
           <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
-            // find my profile on TryHackMe:
+            // find my profile on Root-Me:
             </span>
-          <a class="text-[#E99287] underline underline-offset-4" :href="config.contacts.social.tryhackme.url + '/' + config.contacts.social.tryhackme.user">
-            "{{ config.contacts.social.tryhackme.url }}/{{ config.contacts.social.tryhackme.user }}"
+          <a class="text-[#E99287] underline underline-offset-4" :href="config.contacts.social.root_me.url + '/' + config.contacts.social.root_me.user">
+            "{{ config.contacts.social.root_me.url }}/{{ config.contacts.social.root_me.user }}"
           </a>
         </p>
       </div>
