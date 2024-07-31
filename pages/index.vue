@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
                         const
                     </span>
           <span class="text-[#43D9AD]">
-                        githubLink
+                        GithubLink
                     </span>
           <span class="text-text">
                         =
