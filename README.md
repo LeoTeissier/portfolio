@@ -10,29 +10,46 @@ This is my personal portfolio website, crafted by me, <a href="https://github.co
 
 ## Construire l'image Docker
 
-Clone the project
+1. Clone the project
 
 ```bash
   git clone https://github.com/leoteissier/portfoliov2.git
 ```
 
-Go to the project directory
+2. Go to the project directory
 
 ```bash
   cd portfolio
 ```
 
-Crée l'image docker
+3. Navigate to the docker directory
 
 ```bash
-docker build -t portfolio .
+cd docker
 ```
 
-Lancer le docker container avec l'auto-reload activer
+4. Build and start the container
 
 ```bash
-docker run --name portfolio -v "$(pwd):/app" -v /app/node_modules -p 3000:3000 portfolio
+sudo docker-compose up -d --build
 ```
+
+5. Access the application
+
+Open your browser and navigate to http://localhost:3000 to see your portfolio.
+
+6. Stop the container
+
+```bash
+sudo docker-compose down
+```
+
+7. Remove the container
+
+```bash
+sudo docker-compose rm
+```
+
 
 ## Authors
 
