@@ -65,18 +65,21 @@ onBeforeUnmount(() => {
           </a>
         </p>
         <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': isMobile }">
-                    // you can also see it on my Root-Me page
-                </span>
+          // you can also see it on my Root-Me page
+        </span>
         <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
-                    // find my profile on Root-Me:
-                </span>
+          // find my profile on Root-Me:
+        </span>
         <p class="code text-[#E5E9F0]">
-                    <span class="text-[#4D5BCE]">
-                        const
-                    </span>
+          <span class="text-[#4D5BCE]">
+              const
+          </span>
           <span class="text-[#43D9AD]">
-                        RootMeLink
-                    </span>
+            RootMeLink
+          </span>
+          <span class="text-text">
+            =
+          </span>
           <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
             // find my profile on Root-Me:
             </span>
