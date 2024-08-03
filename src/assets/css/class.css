@@ -1,0 +1,30 @@
+.border-color {
+  border-color: var(--color-border);
+}
+.border-top {
+  border-top: 1px solid var(--color-border);
+}
+.border-right {
+  border-right: 1px solid var(--color-border);
+}
+.border-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+.border-left {
+  border-left: 1px solid var(--color-border);
+}
+.text-white {
+  color: var(--color-secondary-extra-dark);
+}
+.text-primary {
+  color: var(--color-secondary);
+}
+.text-secondary {
+  color: var(--color-secondary-dark);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-extra {
+  color: var(--color-accent-extra);
+}

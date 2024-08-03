@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import config from "~/developer.json";
-import { useMenuState } from '~/storages/useMenuState';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { useRoute } from "vue-router";
+import config from "@/developer.json";
+import { useMenuState } from '@/storages/useMenuState';
 
 const { menuOpen, toggleMobileMenu } = useMenuState();
 
@@ -23,7 +24,7 @@ function checkIfMobile() {
 }
 
 // link active
-const route = useRoute()
+const route = useRoute();
 const isActive = computed(() => {
   return (routePath: string) => route.path === routePath
 })
@@ -40,23 +41,23 @@ const isActive = computed(() => {
               {{ config.logo_name }}
             </div>
 
-            <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-text border-right" to="/" :class="{ active: isActive('/') }">
+            <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-white border-right" to="/" :class="{ active: isActive('/') }">
               _hello
               <span class="border-bottom"/>
             </NuxtLink>
 
-            <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-text border-right" to="/about-me" :class="{ active: isActive('/about-me') }">
+            <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-white border-right" to="/about-me" :class="{ active: isActive('/about-me') }">
               _about-me
               <span class="border-bottom"/>
             </NuxtLink>
 
-            <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-text border-right" to="/projects" :class="{ active: isActive('/projects') }">
+            <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-white border-right" to="/projects" :class="{ active: isActive('/projects') }">
               _projects
               <span class="border-bottom"/>
             </NuxtLink>
           </div>
 
-          <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-text border-left" to="/contact-me" :class="{ active: isActive('/contact-me')}">
+          <NuxtLink class="flex justify-center items-center px-8 hover:bg-border hover:text-white border-left" to="/contact-me" :class="{ active: isActive('/contact-me')}">
             _contact-me
             <span class="border-bottom"/>
           </NuxtLink>

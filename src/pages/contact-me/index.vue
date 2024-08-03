@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import config from "~/developer.json";
+import config from "@/developer.json";
 const contact = config.contacts;
 
 const email = ref('');
@@ -22,19 +22,19 @@ const updateMessage = (newMessage: string) => {
 </script>
 
 <template>
-   <main class="page flex flex-col lg:flex-row">
+  <main class="page flex flex-col lg:flex-row">
 
-      <div class="lg:hidden flex justify-start items-center w-full min-h-16 pl-10 text-text text-xl border-bottom">
+      <div class="lg:hidden flex justify-start items-center w-full min-h-16 pl-10 text-white text-xl border-bottom">
         <h2>_contact-me</h2>
       </div>
 
-      <div data-aos="fade-right" class="flex flex-col w-full h-fit lg:h-full border-0 lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
+      <div data-aos="fade-right" class="flex flex-col w-full h-fit lg:h-full border-0 lg:max-w-80 lg:min-w-80 border-right lg:border-r">
 
         <!-- contacts -->
         <div id="contacts" class="flex flex-col">
           <div class="flex items-center border-bottom h-14 px-6 py-2" @click="contactOpen = !contactOpen">
             <img class="mr-2 rotate-90" src="/svg/arrow.svg" alt="">
-            <h3 class="text-text text-lg">
+            <h3 class="text-white text-lg">
               contacts
             </h3>
           </div>
@@ -72,7 +72,7 @@ const updateMessage = (newMessage: string) => {
         <!-- main -->
         <div data-aos="fade-up" class="flex lg:grid lg:grid-cols-2 h-full w-full">
 
-          <div id="left" class="h-full w-full flex flex-col items-center p-16 border-0 lg:border-border lg:border-r">
+          <div id="left" class="h-full w-full flex flex-col items-center p-16 border-0 border-color lg:border-r">
 
             <ContactForm
                 :email="email"

@@ -3,59 +3,58 @@
     "logo_name": "leo-teissier",
     "role": "Full-stack developer",
     "about": {
-        "sections": {
-            "professional-info": {
+        "sections": [
+            {
                 "title": "professional-info",
                 "icon": "/svg/info-professional.svg",
-                "info": {
-                    "experience": {
+                "info": [
+                    {
                         "title": "experience",
-                        "description": "<br>I have 3 years of experience in web development, during which I have worked on various projects ranging from corporate websites to complex web applications. Here are some of my key experiences:<br><br>- InovShop Digital: During a 10-week internship at InovShop Digital, a web development company, I developed an online media library using JavaScript for both front-end and back-end development. My primary responsibilities included designing and implementing features for managing and sharing multimedia content, collaborating with experienced developers to craft a user-friendly interface. This experience enhanced my JavaScript abilities, provided insight into web architectures, and offered practical full-stack development experience, alongside learning professional work ethic and adherence to project deadlines.<br><br>- Ministère des Armées: During my six-month internship at the Ministry of the Armed Forces, I designed and implemented a user interface (UI) for remote management systems. This project involved in-depth research and application of advanced programming techniques to ensure the UI was both intuitive and efficient, catering to the specific needs of defense operations. My work contributed significantly to enhancing the operability and user experience of the remote management system, allowing for more effective control and monitoring. This experience not only honed my technical skills in UI design but also deepened my understanding of its application in critical defense infrastructure."
+                        "description": "<br>J'ai 3 ans d'expérience en développement web, durant lesquels j'ai travaillé sur divers projets allant de sites web corporatifs à des applications web complexes. Voici quelques-unes de mes expériences clés :<br><br>- InovShop Digital : Durant un stage de 10 semaines chez InovShop Digital, une entreprise de développement web, j'ai développé une bibliothèque multimédia en ligne en utilisant JavaScript pour le développement front-end et back-end. Mes principales responsabilités incluaient la conception et la mise en œuvre de fonctionnalités pour la gestion et le partage de contenu multimédia, ainsi que la collaboration avec des développeurs expérimentés pour créer une interface conviviale. Cette expérience a amélioré mes compétences en JavaScript, m'a offert une vision des architectures web, et m'a fourni une expérience pratique du développement full-stack, tout en apprenant l'éthique professionnelle et le respect des délais de projet.<br><br>- Ministère des Armées : Durant mon stage de six mois au Ministère des Armées, j'ai conçu et implémenté une interface utilisateur (UI) pour des systèmes de gestion à distance. Ce projet a impliqué une recherche approfondie et l'application de techniques de programmation avancées pour garantir que l'UI soit à la fois intuitive et efficace, répondant aux besoins spécifiques des opérations de défense. Mon travail a contribué de manière significative à améliorer l'opérabilité et l'expérience utilisateur du système de gestion à distance, permettant un contrôle et une surveillance plus efficaces. Cette expérience a non seulement affiné mes compétences techniques en conception UI mais a également approfondi ma compréhension de son application dans des infrastructures critiques de défense."
                     },
-                    "hard-skills": {
+                    {
                         "title": "hard-skills",
-                        "description": "<br>As a full-stack developer, I have acquired a diverse set of technical skills that allow me to create innovative and functional web applications. Here are some of my hard skills:<br><br>- Programming languages: JavaScript, PHP, Python, Rust, C, HTML, CSS<br>- Frameworks: Vuejs, React, Tailwind, Nuxt.js, Symfony, Express.js, Angular, Django<br>- Databases: MySQL, MariaDB<br>- Design and REST/GraphQL API development: Postman, Swagger<br>- Versioning with Git: Git, Github, Gitlab<br>- Debugging and performance optimization: Chrome DevTools, Lighthouse, WebPageTest"
+                        "description": "<br>En tant que développeur full-stack, j'ai acquis un ensemble diversifié de compétences techniques qui me permettent de créer des applications web innovantes et fonctionnelles. Voici quelques-unes de mes compétences techniques :<br><br>- Langages de programmation : JavaScript, PHP, Python, Rust, C, HTML, CSS<br>- Frameworks : Vue.js, React, Tailwind, Nuxt.js, Symfony, Express.js, Angular, Django<br>- Bases de données : MySQL, MariaDB<br>- Conception et développement d'API REST/GraphQL : Postman, Swagger<br>- Gestion de version avec Git : Git, GitHub, GitLab<br>- Débogage et optimisation des performances : Chrome DevTools, Lighthouse, WebPageTest"
                     },
-                    "soft-skills": {
+                    {
                         "title": "soft-skills",
-                        "description": "<br>In addition to my technical skills, I have developed a range of soft skills that are essential for effective collaboration and project management. Here are some of my soft skills:<br><br>- Effective communication: Clear and concise communication with colleagues and clients<br>- Team player: Collaboration and sharing of ideas with team members<br>- Problem solving: Analysis of problems, proposal of solutions and effective implementation<br>- Time management: Organization, priority management and meeting deadlines<br>- Adaptability: Openness to change, quick adaptation to new situations and flexibility in facing new challenges"
+                        "description": "<br>En plus de mes compétences techniques, j'ai développé une gamme de compétences interpersonnelles essentielles pour une collaboration efficace et une gestion de projet réussie. Voici quelques-unes de mes compétences interpersonnelles :<br><br>- Communication efficace : Communication claire et concise avec les collègues et les clients<br>- Esprit d'équipe : Collaboration et partage d'idées avec les membres de l'équipe<br>- Résolution de problèmes : Analyse des problèmes, proposition de solutions et mise en œuvre efficace<br>- Gestion du temps : Organisation, gestion des priorités et respect des délais<br>- Adaptabilité : Ouverture au changement, adaptation rapide aux nouvelles situations et flexibilité face aux nouveaux défis"
                     }
-                }
+                ]
             },
-            "personal-info": {
+            {
                 "title": "personal-info",
                 "icon": "/svg/info-personal.svg",
-                "info": {
-                    "bio": {
+                "info": [
+                    {
                         "title": "bio",
                         "description": "<br>I have 3 years of experience in web development and I am passionate about creating innovative and functional web applications. My background has allowed me to work on various projects, ranging from corporate websites to complex web applications.<br><br>I particularly enjoy the creative aspect of web development, where I can bring to life ideas and deliver exceptional user experiences. I am constantly looking for new technologies and best practices to improve my skills and stay up to date in an ever-changing field.<br><br>Apart from web development, I like to explore other areas of web development. information technology such as cybersecurity, which allows me to understand the challenges of protecting systems and online data."
                     },
-                    "interests": {
+                    {
                         "title": "interests",
                         "description": "<br>I am passionate about continuous learning and enjoy immersing myself in new topics. Here are some of my interests:<br><br>- Cybersecurity: In addition to web development, I also train in cybersecurity to gain a better understanding of online threats and protection strategies.<br>- Street Workout: I developed an interest in street workout, which combines fitness and calisthenics. I enjoy taking on new physical challenges and improving my strength and fitness.<br>- Video games: I enjoy video games, especially Valorant. I like the competitive and strategic aspect of online games, which allows me to relax and have fun."
                     },
-                    "education": {
+                    {
                         "title": "education",
                         "description": "<br>Following my studies at the IUT of Troyes in the 3rd year GOAL MMI (Multimedia and Internet Professions), where I focused on web development, communication, and multimedia project management, I have acquired extensive knowledge in web programming, user interface design, and database management.<br><br>Always eager to enhance my learning, I engage in online courses, tutorials, and contribute to open source projects, aiming to broaden my expertise in web development and delve into cybersecurity.<br><br>To further this ambition, I am set to join the 'École 2600', embarking on a three-year program to earn a title as an Expert in Data Security, Systems, and Networks (RNCP Level 7 / Bac+5). This step represents my commitment to advancing in the cybersecurity field, reflecting my dedication to continuous learning and professional development."
                     }
-                }
+                ]
             },
-            "hobbies-info": {
+            {
                 "title": "hobbies-info",
                 "icon": "/svg/info-hobbies.svg",
-                "info": {
-                    "sports": {
+                "info": [
+                    {
                         "title": "sports",
                         "description": "<br>I am a sports enthusiast and enjoy maintaining an active and healthy lifestyle. Here are some of my sports interests:<br><br>- Street Workout: I am fascinated by street workout, a discipline that combines strength, agility and creativity. I like to train using my own body weight and push my limits by doing calisthenic exercises.<br>- Football: I am also a big fan of football and enjoy watching and playing the sport. It's a great way to have fun and keep fit at the same time."
                     },
-                    "favorite-games": {
+                    {
                         "title": "favorite-games",
                         "description": "<br>I am a video game enthusiast and I like to spend time playing different titles. Here are some of my favorite games:<br><br>- Valorant: Valorant is one of my games I enjoy the tactical and competitive aspect of this first-person shooter, and I like to compete against other players online.<br>- Sekiro: Shadows Die Twice: I also have a lot loved Sekiro: Shadows Die Twice. This action-adventure game offers challenging challenge with intense combat and captivating atmosphere.<br>- Elite Dangerous: Elite Dangerous is a space simulation game that offers an immersive experience in the I enjoy exploring the vast expanses of the galaxy, trading and participating in epic space battles."
                     }
-
-                }
+                ]
             }
-        }
+        ]
     },
     "contacts": {
         "direct": {

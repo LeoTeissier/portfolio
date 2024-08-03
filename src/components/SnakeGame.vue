@@ -326,18 +326,18 @@ onUnmounted(() => {
       <!-- Game Over -->
       <div v-if="gameOver" id="game-over">
         <span class="text-accent text-3xl bg-primary h-16 flex items-center justify-center">GAME OVER!</span>
-        <button class="text-menu-text text-xl flex items-center justify-center w-full py-6 hover:text-text" @click="startAgain">start-again</button>
+        <button class="text-menu-text text-xl flex items-center justify-center w-full py-6 hover:text-white" @click="startAgain">start-again</button>
       </div>
 
       <div v-if="gameWon" id="congrats" class="hidden">
         <span class="text-accent text-3xl bg-primary h-16 flex items-center justify-center">WELL DONE!</span>
-        <button class="text-menu-text text-xl flex items-center justify-center w-full py-6 hover:text-text" @click="startAgain">play-again</button>
+        <button class="text-menu-text text-xl flex items-center justify-center w-full py-6 hover:text-white" @click="startAgain">play-again</button>
       </div>
 
       <div id="console-menu" class="h-full flex flex-col items-end justify-start">
 
 
-        <div id="instructions" class="text-sm text-text">
+        <div id="instructions" class="text-sm text-white">
           <p>// use your keyboard</p>
           <p>// arrows to play</p>
 
@@ -366,7 +366,7 @@ onUnmounted(() => {
 
         <!-- score board -->
         <div id="score-board" class="w-full flex flex-col pl-5">
-          <p class=" text-text pt-5">// food left</p>
+          <p class=" text-white pt-5">// food left</p>
 
           <div id="score" class="grid grid-cols-5 gap-5 justify-items-center pt-5 w-fit">
             <div class="food"></div>

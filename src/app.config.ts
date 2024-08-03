@@ -1,8 +1,6 @@
-/*
-* Nuxt 3 Config File
-* https://nuxt.com/docs/getting-started/configuration#app-configuration
-*/
-let defineAppConfig1 = defineAppConfig({
+import { defineAppConfig } from 'nuxt/app';
+
+const defineAppConfig1 = defineAppConfig({
     title: 'Hello Nuxt',
     blog:{
         enabled: true,

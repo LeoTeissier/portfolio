@@ -13,13 +13,13 @@ This is my personal portfolio website, crafted by me, <a href="https://github.co
 1. Clone the project
 
 ```bash
-  git clone https://github.com/leoteissier/portfoliov2.git
+git clone https://github.com/leoteissier/portfoliov2.git
 ```
 
 2. Go to the project directory
 
 ```bash
-  cd portfolio
+cd portfolio
 ```
 
 3. Navigate to the docker directory
@@ -31,7 +31,7 @@ cd docker
 4. Build and start the container
 
 ```bash
-sudo docker-compose up -d --build
+sudo docker-compose -p portfolio up -d --build
 ```
 
 5. Access the application

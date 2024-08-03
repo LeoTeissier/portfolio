@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 import 'highlight.js/lib/common';
+import type { Gist } from './path-to-your-interface-file';
 
 const props = defineProps({
   id: {
@@ -14,14 +15,52 @@ const props = defineProps({
 const highlightjs = hljsVuePlugin.component;
 
 // Définition des propriétés réactives
-const gist = ref(null);
-const monthsAgo = ref(null);
-const content = ref(null);
-const language = ref(null);
+const gist = ref<Gist>({
+  url: '',
+  forks_url: '',
+  commits_url: '',
+  id: '',
+  node_id: '',
+  git_pull_url: '',
+  git_push_url: '',
+  html_url: '',
+  files: {},
+  public: false,
+  created_at: '',
+  updated_at: '',
+  description: null,
+  comments: 0,
+  user: null,
+  comments_url: '',
+  owner: {
+    login: '',
+    id: 0,
+    avatar_url: '',
+    gravatar_id: '',
+    url: '',
+    html_url: '',
+    followers_url: '',
+    following_url: '',
+    gists_url: '',
+    starred_url: '',
+    subscriptions_url: '',
+    organizations_url: '',
+    repos_url: '',
+    events_url: '',
+    received_events_url: '',
+    type: '',
+    site_admin: false,
+  },
+  truncated: false,
+});
+const github_token = ref<string>('');
+const monthsAgo = ref<number | null>(null);
+const content = ref<string>('');
+const language = ref<string>('');
 const dataFetched = ref(false);
 const showError = ref(false);
 const showComments = ref(false);
-const comment = ref(null);
+const comment = ref<string>('');
 const stared = ref(false);
 
 // Définition des méthodes
@@ -32,7 +71,7 @@ const fetchData = async () => {
       showError.value = true;
       return;
     }
-    const gistData = await response.json();
+    const gistData: Gist = await response.json();
     await setValues(gistData);
     dataFetched.value = true;
   } catch (error) {
@@ -41,13 +80,13 @@ const fetchData = async () => {
   }
 };
 
-const starGist = async (gistId) => {
+const starGist = async (gistId: string) => {
   try {
     await fetch(`https://api.github.com/gists/${gistId}/star`, {
       method: 'PUT',
       headers: {
-        'Content-Length': 0
-      }
+        'Authorization': `token ${github_token.value}`, // Vous aurez besoin d'un token GitHub pour cette action
+      },
     });
     stared.value = true;
   } catch (error) {
@@ -56,10 +95,13 @@ const starGist = async (gistId) => {
 };
 
 // Retire un Gist des favoris
-const unstarGist = async (gistId) => {
+const unstarGist = async (gistId: string) => {
   try {
     await fetch(`https://api.github.com/gists/${gistId}/star`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `token ${github_token.value}`, // Vous aurez besoin d'un token GitHub pour cette action
+      },
     });
     stared.value = false;
   } catch (error) {
@@ -67,7 +109,7 @@ const unstarGist = async (gistId) => {
   }
 };
 
-const setComments = async (commentsUrl) => {
+const setComments = async (commentsUrl: string) => {
   try {
     const response = await fetch(commentsUrl);
     const commentsData = await response.json();
@@ -77,20 +119,20 @@ const setComments = async (commentsUrl) => {
   }
 };
 
-const setMonths = (date) => {
+const setMonths = (date: string) => {
   const createdDate = new Date(date);
   const currentDate = new Date();
-  monthsAgo.value = Math.round((currentDate - createdDate) / (1000 * 60 * 60 * 24 * 30));
+  monthsAgo.value = Math.round((currentDate.getTime() - createdDate.getTime()) / (1000 * 60 * 60 * 24 * 30));
 };
 
-const setSnippet = (gistData) => {
+const setSnippet = (gistData: Gist) => {
   const fileName = Object.keys(gistData.files)[0];
   const fileData = gistData.files[fileName];
   content.value = fileData.content;
   language.value = fileData.language;
 };
 
-const setValues = async (gistData) => {
+const setValues = async (gistData: Gist) => {
   gist.value = gistData;
   setMonths(gistData.created_at);
   setSnippet(gistData);
@@ -121,13 +163,13 @@ onMounted(fetchData);
       <div class="flex text-menu-text text-xs justify-self-end lg:mx-2">
         <div class="flex lg:mx-2">
           <img src="/svg/gist/comments.svg" alt="" class="w-4 h-4 mr-2">
-          <span class="hover:cursor-pointer hover:text-text" @click="toggleComments">details</span>
+          <span class="hover:cursor-pointer hover:text-white" @click="toggleComments">details</span>
         </div>
         <div class="hidden lg:flex">
           <img v-if="!stared" src="/svg/gist/star-line.svg" alt="" class="w-4 h-4 mx-2">
           <img v-else src="/svg/gist/star-fill.svg" alt="" class="w-4 h-4 mx-2">
-          <span v-if="!stared" class="hover:cursor-pointer hover:text-text" @click="starGist(gist.id)">stars</span>
-          <span v-else class="hover:cursor-pointer hover:text-text" @click="unstarGist(gist.id)">stars</span>
+          <span v-if="!stared" class="hover:cursor-pointer hover:text-white" @click="starGist(gist.id)">stars</span>
+          <span v-else class="hover:cursor-pointer hover:text-white" @click="unstarGist(gist.id)">stars</span>
         </div>
       </div>
     </div>
@@ -146,7 +188,7 @@ onMounted(fetchData);
       <span class="flex justify-center text-4xl pb-3">
         X__X
       </span>
-        <span class="text-text flex justify-center text-xl">
+        <span class="text-white flex justify-center text-xl">
         No Gist found
       </span>
         <span class="flex justify-center">
