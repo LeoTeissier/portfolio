@@ -37,22 +37,22 @@ const onSubmit = async () => {
   <div v-if="submitted" class="flex flex-col items-center justify-center h-full">
     <h2 class="text-white text-2xl text-center">Thank you! 🤘</h2>
     <p class="text-center my-2">Your message has been accepted. You will recieve an answer really soon!</p>
-    <button @click="resetForm" class="bg-border hover:bg-secondary-dark text-text rounded-lg py-2 px-4">send-new-message</button>
+    <button @click="resetForm" class="bg-border hover:bg-secondary-dark text-white rounded-lg py-2 px-4">send-new-message</button>
   </div>
   <form v-else @submit.prevent="onSubmit" class="flex flex-col max-w-lg w-full mx-auto text-sm">
     <div class="flex flex-col mb-5">
       <label for="email" class="mb-3">_email:</label>
-      <input type="email" name="email" :value="email" :placeholder="email" @input="$emit('update:email', $event.target.value)" class="bg-primary border-2 border-border rounded-lg p-2 mb-5 placeholder-secondary" required>
+      <input type="email" name="email" :value="email" :placeholder="email" @input="$emit('update:email', $event.target.value)" class="bg-[#01080E] border-2 border-color rounded-lg p-2 mb-5 placeholder-secondary" required>
     </div>
     <div class="flex flex-col mb-5">
       <label for="subject" class="mb-3">_subject:</label>
-      <input type="text" name="subject" :value="subject" :placeholder="subject" @input="$emit('update:subject', $event.target.value)" class="bg-primary border-2 border-border rounded-lg p-2 mb-5 placeholder-secondary" required>
+      <input type="text" name="subject" :value="subject" :placeholder="subject" @input="$emit('update:subject', $event.target.value)" class="bg-[#01080E] border-2 border-color rounded-lg p-2 mb-5 placeholder-secondary" required>
     </div>
     <div class="flex flex-col mb-5">
       <label for="message" class="mb-3">_message:</label>
-      <textarea name="message" :value="message" :placeholder="message" @input="$emit('update:message', $event.target.value)" class="h-36 bg-primary border-2 border-border rounded-lg resize-none p-2 placeholder-secondary scrollbar" required></textarea>
+      <textarea name="message" :value="message" :placeholder="message" @input="$emit('update:message', $event.target.value)" class="h-36 bg-[#01080E] border-2 border-color rounded-lg resize-none p-2 placeholder-secondary scrollbar" required></textarea>
     </div>
-    <button type="submit" class="bg-border hover:bg-secondary-dark text-text rounded-lg py-2 px-4">submit-message</button>
+    <button type="submit" class="bg-[#1E2D3D] hover:bg-[#4D5BCE] text-white rounded-lg py-2 px-4">submit-message</button>
   </form>
 </template>
 

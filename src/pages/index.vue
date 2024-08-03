@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import SnakeGame from "~/components/SnakeGame.vue";
-import config from "~/developer.json";
-import { useMenuState } from '~/storages/useMenuState';
-import { checkIfMobile } from "~/utils/is-mobile";
+import SnakeGame from "@/components/SnakeGame.vue";
+import config from "@/developer.json";
+import { useMenuState } from '@/storages/useMenuState';
+import { checkIfMobile } from "@/utils/is-mobile";
 
 const { menuOpen } = useMenuState();
 
@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
           <span class="text-[#43D9AD]">
                         GithubLink
                     </span>
-          <span class="text-text">
+          <span class="text-white">
                         =
                     </span>
           <a class="text-[#E99287] underline underline-offset-4" :href="'https://github.com/' + config.contacts.social.github.user">
@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
           <span class="text-[#43D9AD]">
             RootMeLink
           </span>
-          <span class="text-text">
+          <span class="text-white">
             =
           </span>
           <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">

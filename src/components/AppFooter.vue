@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import config from "~/developer.json";
+import { ref, onMounted }from 'vue';
+import config from "@/developer.json";
 
 const social = config.contacts.social
 const isMobile = ref(false);
@@ -25,7 +26,7 @@ function checkIfMobile() {
                   find me in:
                 </div>
 
-                <NuxtLink :to="social.linkedin.url + '/' + social.linkedin.user" target="_blank" class="flex justify-center items-center px-8 border-right hover:bg-border">
+                <NuxtLink :to="social.linkedin.url + '/' + social.linkedin.user" target="_blank" class="flex justify-center items-center px-8 border-right hover:bg-[#1E2D3D]">
                   <img src="/svg/social/linkedin.svg" alt="linkedin icon"/>
                 </NuxtLink>
 
@@ -34,7 +35,7 @@ function checkIfMobile() {
             <!-- github user -->
             <div class="flex h-full border-left">
 
-                <NuxtLink :to="social.github.url + '/' + social.github.user" target="_blank" class="flex justify-center items-center px-8 hover:bg-border">
+                <NuxtLink :to="social.github.url + '/' + social.github.user" target="_blank" class="flex justify-center items-center px-8 hover:bg-[#1E2D3D]">
                     @{{ social.github.user }}
                     <img src="/svg/social/github.svg" alt="github icon" class="pl-2"/>
                 </NuxtLink>
@@ -54,7 +55,7 @@ function checkIfMobile() {
         <!-- github user -->
         <div class="flex h-full border-left">
 
-          <NuxtLink :to="social.github.url + '/' + social.github.user" target="_blank" class="flex justify-center items-center px-8 hover:bg-border">
+          <NuxtLink :to="social.github.url + '/' + social.github.user" target="_blank" class="flex justify-center items-center px-8 hover:bg-[#1E2D3D]">
             <img src="/svg/social/github.svg" alt="github icon" class="pl-2"/>
           </NuxtLink>
 

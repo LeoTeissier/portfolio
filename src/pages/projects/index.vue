@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import config from '~/developer.json';
+import { ref, onMounted, computed } from 'vue';
+import config from '@/developer.json';
+import type Projet from '@/interfaces/projet';
 
-const projects = ref<{}>([]);
+const projects = ref<Projet[]>([]);
 const techs = ref<string[]>([]);
 const filters = ref(['all']);
 const loading = ref(true);
@@ -45,7 +46,6 @@ function filterProjects(tech: string) {
     }
   }
 
-  // Si aucun filtre n'est sélectionné, affiche tous les projets
   if (filters.value.length === 0) {
     filters.value.push('all');
   }
@@ -84,21 +84,21 @@ function fadeDelay(key: number) {
 <template>
   <main v-if="!loading" class="page flex flex-col flex-auto lg:flex-row overflow-hidden">
 
-    <div class="lg:hidden flex justify-start items-center w-full min-h-16 pl-10 text-text text-xl border-bottom">
+    <div class="lg:hidden flex justify-start items-center w-full min-h-16 pl-10 text-white text-xl border-bottom">
       <h2>_projects</h2>
     </div>
 
     <!-- section title (mobile) -->
     <div class="lg:hidden flex items-center bg-border min-h-10 mb-1 pl-10 border-bottom" @click="isFilterMenuVisible = !isFilterMenuVisible">
       <img alt="" class="section-arrow" src="/svg/arrow.svg">
-      <p class="text-text text-sm ml-2">projects</p>
+      <p class="text-white text-sm ml-2">projects</p>
     </div>
 
-    <div data-aos="fade-right" class="w-full flex-col border-0 text-menu-text lg:flex lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
+    <div data-aos="fade-right" class="w-full flex-col border-0 text-menu-text lg:flex lg:max-w-80 lg:min-w-80 border-color lg:border-r">
       <!-- title -->
       <div class="hidden lg:flex items-center min-w-full min-h-14 border-bottom px-6 py-2">
         <img src="/svg/arrow.svg" alt="" class="section-arrow mx-3 rotate-90">
-        <p class="text-text">projects</p>
+        <p class="text-white">projects</p>
       </div>
 
       <!-- filter menu -->
@@ -135,8 +135,8 @@ function fadeDelay(key: number) {
 
       <!-- windows tab mobile -->
       <div class="flex lg:hidden items-center my-4 pl-10">
-        <span class="text-text"> // </span>
-        <p class="text-text px-3">projects</p>
+        <span class="text-white"> // </span>
+        <p class="text-white px-3">projects</p>
         <span class="text-menu-text"> / </span>
         <p v-for="filter in filters" :key="filter" class="text-menu-text px-3">{{ filter }};</p>
       </div>
@@ -154,7 +154,7 @@ function fadeDelay(key: number) {
             </span>
 
             <!-- info -->
-            <div class="flex flex-col border border-border rounded-xl">
+            <div class="flex flex-col border border-color rounded-xl">
               <div class="relative">
                 <div class="absolute flex right-3 top-3">
                   <img v-for="tech in project.tech" :key="tech" :src="'/svg/techs/filled/' + tech + '.svg'" alt="" class="w-6 h-6 mx-1 hover:opacity-75">
@@ -168,15 +168,15 @@ function fadeDelay(key: number) {
                   {{ project.description }}
                 </p>
                 <div class="flex justify-between">
-                  <a v-if="project.url != ''" :href="project.url" target="_blank" class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg">
+                  <a v-if="project.url != ''" :href="project.url" target="_blank" class="bg-[#1E2D3D] hover:bg-[#4D5BCE] text-white py-2 px-4 w-fit rounded-lg">
                     view-project
                   </a>
 
-                  <p v-else class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg">
+                  <p v-else class="bg-border hover:bg-secondary-dark text-white py-2 px-4 w-fit rounded-lg">
                     work-in-progress
                   </p>
 
-                  <a v-if="project.github" :href="project.github" target="_blank" class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg ml-2">
+                  <a v-if="project.github" :href="project.github" target="_blank" class="bg-[#1E2D3D] hover:bg-[#4D5BCE] text-white py-2 px-4 w-fit rounded-lg ml-2">
                     view-github
                   </a>
                 </div>
@@ -190,7 +190,7 @@ function fadeDelay(key: number) {
           <span class="flex justify-center text-4xl pb-3">
             X__X
           </span>
-          <span class="text-text flex justify-center text-xl">
+          <span class="text-white flex justify-center text-xl">
             No matching projects
           </span>
           <span class="flex justify-center">
