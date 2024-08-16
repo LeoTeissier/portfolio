@@ -20,7 +20,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "
             sudo rm -rf /var/www/portfolio &&
-            git clone https://github.com/leoteissier/portfolio.git /var/www &&
+            git clone https://github.com/leoteissier/portfolio.git /var/www/portfolio &&
             cd /var/www/portfolio &&
             sudo npm install &&
             sudo npm run generate
