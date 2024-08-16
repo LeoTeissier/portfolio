@@ -22,4 +22,5 @@ jobs:
             sudo git config --global --add safe.directory /var/www/portfolio &&
             cd /var/www/portfolio &&
             sudo git pull origin main
+            sudo npm run generate
           "
