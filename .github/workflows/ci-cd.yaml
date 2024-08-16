@@ -19,7 +19,7 @@ jobs:
       - name: Deploy to VPS
         run: |
           ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "
-            git config --global --add safe.directory /var/www/portfolio &&
+            sudo git config --global --add safe.directory /var/www/portfolio &&
             cd /var/www/portfolio &&
-            git pull origin main
+            sudo git pull origin main
           "
