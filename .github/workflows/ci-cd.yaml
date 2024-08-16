@@ -1,9 +1,7 @@
-name: Deploy to VPS
-
 on:
   push:
     branches:
-      - main  # Déclenche le workflow sur chaque push vers la branche 'main'
+      - main
 
 jobs:
   deploy:
@@ -20,7 +18,7 @@ jobs:
 
       - name: Deploy to VPS
         run: |
-          ssh -o StrictHostKeyChecking=no user@vps_ip_address "
+          ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "
             git config --global --add safe.directory /var/www/portfolio &&
             cd /var/www/portfolio &&
             git pull origin main
