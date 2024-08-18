@@ -52,7 +52,3 @@ jobs:
       - name: Deploy to VPS
         run: |
           scp -o StrictHostKeyChecking=no -r dist/* mmi21c14@mmi21c14.mmi-troyes.fr:/var/www/portfolio/
-          ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "
-            sudo rm -rf /var/www/portfolio/* &&
-            sudo cp -r dist/* /var/www/portfolio/
-          "
