@@ -18,10 +18,11 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Build and generate static files in Docker container
-        run: |
-          docker build -t portfolio-app -f docker/Dockerfile .
-          docker run --rm -v ${{ github.workspace }}/dist:/app/dist portfolio-app npm run generate
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate static files
+        run: npm run generate
 
   deploy:
     needs: build-and-generate

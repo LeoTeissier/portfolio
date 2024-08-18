@@ -13,11 +13,8 @@ RUN npm install
 # Copie le reste de l'application dans le répertoire de travail
 COPY . .
 
-# Génère les fichiers statiques de l'application Nuxt
-RUN npm run generate
-
 # Expose le port 3000
 EXPOSE 3000
 
-# Démarre l'application
+# Démarre l'application en mode développement
 CMD ["npm", "run", "dev"]
