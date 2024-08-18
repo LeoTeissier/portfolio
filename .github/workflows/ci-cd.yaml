@@ -24,14 +24,26 @@ jobs:
       - name: Generate static files
         run: npm run generate
 
-      - name: Verify dist directory
-        run: ls -la dist
+      - name: Upload dist as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
 
   deploy:
     needs: build-and-generate
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code (for SSH keys)
+        uses: actions/checkout@v3
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist
+
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
