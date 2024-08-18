@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build-and-generate:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Build app in Docker container
+      - name: Build and generate static files in Docker container
         run: |
           docker build -t portfolio-app -f docker/Dockerfile .
-          docker run --rm -v ${{ github.workspace }}/dist:/app/dist portfolio-app
+          docker run --rm -v ${{ github.workspace }}/dist:/app/dist portfolio-app npm run generate
 
   deploy:
-    needs: build-and-test
+    needs: build-and-generate
     runs-on: ubuntu-latest
 
     steps:
