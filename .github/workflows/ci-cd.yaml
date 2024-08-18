@@ -21,7 +21,7 @@ jobs:
 
       - name: Build app in Docker container
         run: |
-          docker build -t portfolio-app .
+          docker build -t portfolio-app -f docker/Dockerfile .
           docker run --rm portfolio-app npm run generate
 
   deploy:
@@ -42,4 +42,4 @@ jobs:
             cd /var/www/portfolio &&
             sudo npm install &&
             sudo npm run generate
-          "
+          " 
