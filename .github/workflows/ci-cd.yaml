@@ -24,6 +24,9 @@ jobs:
       - name: Generate static files
         run: npm run generate
 
+      - name: Verify dist directory
+        run: ls -la dist
+
   deploy:
     needs: build-and-generate
     runs-on: ubuntu-latest
