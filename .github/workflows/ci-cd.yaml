@@ -1,3 +1,5 @@
+name: Build and Deploy Portfolio
+
 on:
   push:
     branches:
@@ -16,13 +18,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Build app in Docker container
         run: |
           docker build -t portfolio-app -f docker/Dockerfile .
-          docker run --rm portfolio-app npm run generate
+          docker run --rm -v ${{ github.workspace }}/output:/app/.output portfolio-app
 
   deploy:
     needs: build-and-test
@@ -36,10 +35,8 @@ jobs:
 
       - name: Deploy to VPS
         run: |
+          scp -r output/* mmi21c14@mmi21c14.mmi-troyes.fr:/var/www/portfolio/
           ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "
-            sudo rm -rf /var/www/portfolio &&
-            git clone https://github.com/leoteissier/portfolio.git /var/www/portfolio &&
-            cd /var/www/portfolio &&
-            sudo npm install &&
-            sudo npm run generate
+            sudo rm -rf /var/www/portfolio/* &&
+            sudo mv /var/www/portfolio/next /var/www/portfolio
           "
