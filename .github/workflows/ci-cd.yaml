@@ -42,4 +42,4 @@ jobs:
             cd /var/www/portfolio &&
             sudo npm install &&
             sudo npm run generate
-          " 
+          "

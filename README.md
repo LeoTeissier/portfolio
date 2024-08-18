@@ -22,34 +22,19 @@ git clone https://github.com/leoteissier/portfoliov2.git
 cd portfolio
 ```
 
-3. Navigate to the docker directory
+3. Build the Docker container
 
 ```bash
-cd docker
+sudo docker build -t portfolio-app -f docker/Dockerfile .
 ```
 
-4. Build and start the container
+4. Start the container
 
 ```bash
-sudo docker-compose -p portfolio up -d --build
+docker run -d -p 3000:3000 --name portfolio-app portfolio-app
 ```
 
-5. Access the application
-
-Open your browser and navigate to http://localhost:3000 to see your portfolio.
-
-6. Stop the container
-
-```bash
-sudo docker-compose down
-```
-
-7. Remove the container
-
-```bash
-sudo docker-compose rm
-```
-
+5. Open your browser and go to http://localhost:3000 to view the application.
 
 ## Authors
 
