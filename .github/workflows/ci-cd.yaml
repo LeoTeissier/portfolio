@@ -21,7 +21,7 @@ jobs:
       - name: Build app in Docker container
         run: |
           docker build -t portfolio-app -f docker/Dockerfile .
-          docker run --rm -v ${{ github.workspace }}/output:/app/.output portfolio-app
+          docker run --rm -v ${{ github.workspace }}/dist:/app/dist portfolio-app
 
   deploy:
     needs: build-and-test
@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to VPS
         run: |
-          scp -r output/* mmi21c14@mmi21c14.mmi-troyes.fr:/var/www/portfolio/
+          scp -r dist/* mmi21c14@mmi21c14.mmi-troyes.fr:/var/www/portfolio/
           ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "
             sudo rm -rf /var/www/portfolio/* &&
             sudo mv /var/www/portfolio/next /var/www/portfolio
