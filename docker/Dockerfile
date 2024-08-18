@@ -11,9 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copie le reste de l'application dans le répertoire de travail
-COPY nuxt.config.ts ./
-COPY tsconfig.json ./
-COPY src ./src
+COPY . .
 
 # Génère les fichiers statiques de l'application Nuxt
 RUN npm run generate
@@ -22,4 +20,4 @@ RUN npm run generate
 EXPOSE 3000
 
 # Démarre l'application
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
