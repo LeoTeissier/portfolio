@@ -9,13 +9,9 @@ export default defineNuxtConfig({
     buildDir: '.nuxt/',
     ssr: false,
 
-    vite: {
-        resolve: {
-            alias: {
-                '@src': resolve(__dirname, 'src'),
-                '~/assets': resolve(__dirname, 'src/assets'),
-            },
-        },
+    alias: {
+        "~": resolve(__dirname, "src"),
+        "@": resolve(__dirname, "src"),
     },
 
     modules: [
@@ -53,4 +49,5 @@ export default defineNuxtConfig({
         '@/assets/css/main.css',
     ],
 
+    compatibilityDate: '2024-08-18',
 });
