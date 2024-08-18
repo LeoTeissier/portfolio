@@ -12,10 +12,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
-    "@nuxtjs/tailwindcss": "^6.10.3",
     "eslint": "^9.8.0",
     "eslint-plugin-vue": "^9.27.0",
-    "globals": "^15.8.0",
     "typescript-eslint": "^8.0.0",
     "vitest": "^0.25.3"
   },
@@ -24,6 +22,8 @@
     "highlight.js": "^11.7.0",
     "nuxt": "^3.12.4",
     "nuxt-aos": "^1.2.1",
-    "vue": "^3.3.13"
+    "@nuxtjs/tailwindcss": "^6.10.3",
+    "vue": "^3.3.13",
+    "globals": "^15.8.0"
   }
 }

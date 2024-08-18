@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 import 'highlight.js/lib/common';
-import type { Gist } from './path-to-your-interface-file';
+import type Gist from '@/interfaces/gist';
 
 const props = defineProps({
   id: {
