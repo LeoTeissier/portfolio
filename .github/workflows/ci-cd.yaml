@@ -1,4 +1,4 @@
-name: Build and Deploy Portfolio
+name: Build and Deploy Vision-Cine
 
 on:
   push:
@@ -51,5 +51,5 @@ jobs:
 
       - name: Deploy to VPS
         run: |
-          ssh -o StrictHostKeyChecking=no mmi21c14@mmi21c14.mmi-troyes.fr "sudo rm -rf /var/www/portfolio/*"
-          scp -o StrictHostKeyChecking=no -r dist/* mmi21c14@mmi21c14.mmi-troyes.fr:/var/www/portfolio/
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "sudo rm -rf /var/www/portfolio/*"
+          scp -o StrictHostKeyChecking=no -r dist/* ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/portfolio/
