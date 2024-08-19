@@ -1,4 +1,4 @@
-name: Build and Deploy Vision-Cine
+name: Build and Deploy Portfolio
 
 on:
   push:
